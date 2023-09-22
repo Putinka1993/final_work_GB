@@ -7,7 +7,7 @@
 Console.Write("Укажите длину массива: ");
 int len_AR = int.Parse(Console.ReadLine());
 
-Console.WriteLine(CreateArr($"[{String.Join(",", res)}]"));
+string[] result = CreateArr(len_AR);
 
 string[] CreateArr(int l_ar){
     string[] res = new string[l_ar];
@@ -18,9 +18,17 @@ string[] CreateArr(int l_ar){
     return res; 
 }
 
+string[] SortArray(string[] arr){
+    
+}
 
 
 
-// Console.WriteLine($"[{String.Join(",", array)}]");
+
+
+Console.WriteLine($"Заданный массив [{String.Join(", ", result)}]");
+
+
+
 
 
