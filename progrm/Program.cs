@@ -7,18 +7,20 @@
 Console.Write("Укажите длину массива: ");
 int len_AR = int.Parse(Console.ReadLine());
 
-
+Console.WriteLine(CreateArr($"[{String.Join(",", res)}]"));
 
 string[] CreateArr(int l_ar){
-    string[] res = string[l_ar];
+    string[] res = new string[l_ar];
     for (int i = 0; i < l_ar; i++){
-        Console.WriteLine("Введите ")
+        Console.WriteLine($"Введите {i+1}-ое строковое значение: ");
+        res[i] = Console.ReadLine();
     }
+    return res; 
 }
 
 
 
-Console.WriteLine(arrar);
+
 // Console.WriteLine($"[{String.Join(",", array)}]");
 
 
