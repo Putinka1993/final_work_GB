@@ -7,7 +7,7 @@
 Console.Write("Укажите длину массива: ");
 int len_AR = int.Parse(Console.ReadLine());
 
-string[] result = CreateArr(len_AR);
+string[] input = CreateArr(len_AR);
 
 string[] CreateArr(int l_ar){
     string[] res = new string[l_ar];
@@ -18,16 +18,38 @@ string[] CreateArr(int l_ar){
     return res; 
 }
 
-string[] SortArray(string[] arr){
+string[] result = CreateSortArray(input);
+
+string[] CreateSortArray(string[] arr){
+    // подсчет символов в строке для создания массива (т.к. в условиях задачи просят создать массив) 
+    int count = 0;
+    foreach(string el in arr){
+        if (el.Length <= 3) {
+        count++;
+        }
+    }
+    // Создание нового с кол-вом слов меньше или равно длины 3 
+    string[] result = new string[count]; 
     
+    foreach(string el in arr){
+        int i = 0;
+        if (el.Length <= 3) {
+            result[i] = el;
+            i++;
+        }
+    }
+    return result;
 }
 
 
 
+    
 
+// Вывод вводимого массива
+Console.WriteLine($"Заданный массив: [{String.Join(", ", input)}]");
 
-Console.WriteLine($"Заданный массив [{String.Join(", ", result)}]");
-
+// Вывод результата по условию задачи
+Console.WriteLine($"Результат сортировки массива по условиям задачи: [{String.Join(", ", result)}]");
 
 
 
